@@ -1,0 +1,6 @@
+{
+  "name": "SURGIR WEB",
+  "description": "Ecosistema digital empresarial: Marketplace, Inmobiliaria, Servicios, Inteligencia Artificial y Facturación.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
