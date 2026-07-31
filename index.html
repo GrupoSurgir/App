@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SURGIR WEB | Ecosistema Empresarial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="header">
+    <div class="header-left">
+      <button class="icon-btn drawer-toggle" id="drawerToggleBtn" title="Menú">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="brand" id="brandHomeBtn">
+        <div class="brand-badge">S</div>
+        <div class="brand-text">
+          <span class="brand-name">SURGIR WEB</span>
+          <span class="brand-sub">Ecosistema Empresarial</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-search">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <input type="text" id="globalSearchInput" placeholder="Buscar productos, inmuebles, servicios o empresas...">
+    </div>
+
+    <div class="header-right">
+      <div class="role-selector">
+        <i class="fa-solid fa-user-shield"></i>
+        <select id="userRoleSelect">
+          <option value="USUARIO">Rol: Usuario</option>
+          <option value="EMPRESA">Rol: Empresa</option>
+          <option value="ADMINISTRADOR">Rol: Administrador</option>
+        </select>
+      </div>
+
+      <button class="icon-btn" id="themeToggleBtn" title="Cambiar tema">
+        <i class="fa-solid fa-moon" id="themeIcon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Navigation Drawer Backdrop & Modal -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="drawer" id="drawer">
+    <div class="drawer-header">
+      <div class="brand">
+        <div class="brand-badge">S</div>
+        <div class="brand-text">
+          <span class="brand-name">SURGIR WEB</span>
+          <span class="brand-sub">Navegación Principal</span>
+        </div>
+      </div>
+      <button class="icon-btn" id="drawerCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    
+    <nav class="drawer-nav">
+      <a href="#" class="nav-item active" data-route="home">
+        <i class="fa-solid fa-house"></i> <span>Inicio</span>
+      </a>
+      <a href="#" class="nav-item" data-route="marketplace">
+        <i class="fa-solid fa-bag-shopping"></i> <span>Marketplace</span>
+      </a>
+      <a href="#" class="nav-item" data-route="realestate">
+        <i class="fa-solid fa-building"></i> <span>Inmobiliaria</span>
+      </a>
+      <a href="#" class="nav-item" data-route="services">
+        <i class="fa-solid fa-screwdriver-wrench"></i> <span>Servicios</span>
+      </a>
+      <a href="#" class="nav-item" data-route="companies">
+        <i class="fa-solid fa-briefcase"></i> <span>Empresas</span>
+      </a>
+      <a href="#" class="nav-item" data-route="analytics">
+        <i class="fa-solid fa-chart-line"></i> <span>Estadísticas</span>
+      </a>
+      <a href="#" class="nav-item" data-route="invoices">
+        <i class="fa-solid fa-file-invoice-dollar"></i> <span>Facturas</span>
+      </a>
+      <a href="#" class="nav-item" data-route="tasks">
+        <i class="fa-solid fa-list-check"></i> <span>Mis Tareas</span>
+      </a>
+      <a href="#" class="nav-item" data-route="dashboard" id="dashboardNavItem">
+        <i class="fa-solid fa-gauge-high"></i> <span>Mi Panel</span>
+      </a>
+      <a href="#" class="nav-item" data-route="create">
+        <i class="fa-solid fa-circle-plus"></i> <span>Publicar Anuncio</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Container View -->
+  <main class="main-content" id="mainContent">
+
+    <!-- HOME VIEW -->
+    <section class="view active-view" id="view-home">
+      <div class="hero-banner">
+        <div class="hero-content">
+          <span class="hero-chip"><i class="fa-solid fa-sparkles"></i> Potenciado con IA</span>
+          <h1>Ecosistema Digital Empresarial</h1>
+          <p>Conecta con las mejores empresas, productos, proyectos inmobiliarios y servicios profesionales en Colombia.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="heroExploreBtn"><i class="fa-solid fa-compass"></i> Explorar Marketplace</button>
+            <button class="btn btn-outline" id="heroCreateBtn"><i class="fa-solid fa-plus"></i> Publicar Oferta</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Categories Bar -->
+      <div class="section-title">
+        <h2>Secciones Principales</h2>
+      </div>
+      <div class="categories-grid">
+        <div class="category-card" data-route="marketplace">
+          <div class="cat-icon bg-blue"><i class="fa-solid fa-bag-shopping"></i></div>
+          <h3>Marketplace</h3>
+          <p>Tecnología, vehículos y consumibles</p>
+        </div>
+        <div class="category-card" data-route="realestate">
+          <div class="cat-icon bg-purple"><i class="fa-solid fa-building-user"></i></div>
+          <h3>Inmobiliaria</h3>
+          <p>Penthouse, casas campestres, oficinas</p>
+        </div>
+        <div class="category-card" data-route="services">
+          <div class="cat-icon bg-emerald"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3>Servicios Pro</h3>
+          <p>Desarrollo Web, branding y fotografía</p>
+        </div>
+        <div class="category-card" data-route="companies">
+          <div class="cat-icon bg-amber"><i class="fa-solid fa-city"></i></div>
+          <h3>Directorio Empresas</h3>
+          <p>Marcas e industrias verificadas</p>
+        </div>
+      </div>
+
+      <!-- Featured Listings -->
+      <div class="section-header-row">
+        <h2>Destacados del Ecosistema</h2>
+        <button class="btn-text" id="viewAllListingsBtn">Ver todos <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+      <div class="listings-grid" id="homeFeaturedGrid"></div>
+
+      <!-- Featured Companies -->
+      <div class="section-header-row margin-top-lg">
+        <h2>Empresas Aliadas</h2>
+        <button class="btn-text" id="viewAllCompaniesBtn">Ver empresas <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+      <div class="companies-grid" id="homeCompaniesGrid"></div>
+    </section>
+
+    <!-- MARKETPLACE VIEW -->
+    <section class="view" id="view-marketplace">
+      <div class="view-header">
+        <h1>Marketplace Empresarial</h1>
+        <p>Productos tecnológicos, accesorios y bienes corporativos.</p>
+      </div>
+      
+      <div class="filter-chips" id="marketplaceFilterChips">
+        <button class="chip active" data-cat="ALL">Todos</button>
+        <button class="chip" data-cat="Computadores">Computadores</button>
+        <button class="chip" data-cat="Celulares">Celulares</button>
+        <button class="chip" data-cat="Consolas">Consolas</button>
+        <button class="chip" data-cat="Vehículos">Vehículos</button>
+      </div>
+
+      <div class="listings-grid" id="marketplaceGrid"></div>
+    </section>
+
+    <!-- REAL ESTATE VIEW -->
+    <section class="view" id="view-realestate">
+      <div class="view-header">
+        <h1>Portal Inmobiliario</h1>
+        <p>Propiedades exclusivas, penthouses, casas campestres y oficinas AAA.</p>
+      </div>
+
+      <div class="filter-chips" id="realEstateFilterChips">
+        <button class="chip active" data-cat="ALL">Todos</button>
+        <button class="chip" data-cat="Apartamentos">Apartamentos</button>
+        <button class="chip" data-cat="Casas">Casas Campestres</button>
+        <button class="chip" data-cat="Oficinas">Oficinas Corporativas</button>
+      </div>
+
+      <div class="listings-grid" id="realEstateGrid"></div>
+    </section>
+
+    <!-- SERVICES VIEW -->
+    <section class="view" id="view-services">
+      <div class="view-header">
+        <h1>Servicios Profesionales</h1>
+        <p>Soluciones en desarrollo de software, diseño corporativo y medios digitales.</p>
+      </div>
+
+      <div class="filter-chips" id="servicesFilterChips">
+        <button class="chip active" data-cat="ALL">Todos</button>
+        <button class="chip" data-cat="Desarrollo Web">Desarrollo Web & IA</button>
+        <button class="chip" data-cat="Diseño Gráfico">Diseño & Branding</button>
+        <button class="chip" data-cat="Fotografía">Fotografía & Drone</button>
+      </div>
+
+      <div class="listings-grid" id="servicesGrid"></div>
+    </section>
+
+    <!-- COMPANIES VIEW -->
+    <section class="view" id="view-companies">
+      <div class="view-header">
+        <h1>Directorio Empresarial</h1>
+        <p>Empresas registradas en SURGIR WEB Ecosistema.</p>
+      </div>
+      <div class="companies-grid" id="companiesDirectoryGrid"></div>
+    </section>
+
+    <!-- ANALYTICS VIEW -->
+    <section class="view" id="view-analytics">
+      <div class="view-header">
+        <h1>Métricas & Estadísticas</h1>
+        <p>Rendimiento general del ecosistema empresarial.</p>
+      </div>
+
+      <div class="stats-overview-grid">
+        <div class="stat-card">
+          <div class="stat-icon icon-blue"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="stat-info">
+            <span class="stat-value">148,500</span>
+            <span class="stat-label">Visitas Totales</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon icon-emerald"><i class="fa-solid fa-box"></i></div>
+          <div class="stat-info">
+            <span class="stat-value">1,240</span>
+            <span class="stat-label">Publicaciones</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon icon-purple"><i class="fa-solid fa-users"></i></div>
+          <div class="stat-info">
+            <span class="stat-value">8,920</span>
+            <span class="stat-label">Usuarios Activos</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon icon-amber"><i class="fa-solid fa-sack-dollar"></i></div>
+          <div class="stat-info">
+            <span class="stat-value">$485,000,000 COP</span>
+            <span class="stat-label">Volumen de Ventas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-container-card">
+        <h3>Distribución por Ciudades Principales</h3>
+        <div class="city-bars" id="cityBarsContainer"></div>
+      </div>
+    </section>
+
+    <!-- INVOICES VIEW -->
+    <section class="view" id="view-invoices">
+      <div class="view-header">
+        <h1>Gestión de Facturas</h1>
+        <p>Comprobantes electrónicos e historial de facturación.</p>
+      </div>
+      <div class="invoices-list" id="invoicesList"></div>
+    </section>
+
+    <!-- DASHBOARD VIEW -->
+    <section class="view" id="view-dashboard">
+      <div class="view-header">
+        <h1 id="dashboardTitle">Mi Panel Empresarial</h1>
+        <p id="dashboardSubtitle">Gestión de publicaciones, mensajes e historial.</p>
+      </div>
+      
+      <div class="dashboard-widgets-grid">
+        <div class="widget-card">
+          <h3>Mis Publicaciones</h3>
+          <div class="widget-list" id="userListingsWidget"></div>
+        </div>
+        <div class="widget-card">
+          <h3>Mensajes Recibidos</h3>
+          <div class="widget-list" id="userMessagesWidget"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TASKS VIEW -->
+    <section class="view" id="view-tasks">
+      <div class="view-header">
+        <h1>Gestión de Tareas</h1>
+        <p>Administra tus tareas empresariales y recordatorios en tiempo real con Supabase.</p>
+      </div>
+
+      <div class="create-form-wrapper" style="margin-bottom: 24px;">
+        <form id="createTaskForm" class="create-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="taskTitle">Título de la Tarea</label>
+              <input type="text" id="taskTitle" required placeholder="Ej: Renovar registro de cámara de comercio">
+            </div>
+            <div class="form-group">
+              <label for="taskPriority">Prioridad</label>
+              <select id="taskPriority">
+                <option value="BAJA">Baja</option>
+                <option value="MEDIA" selected>Media</option>
+                <option value="ALTA">Alta</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="taskDesc">Descripción</label>
+            <input type="text" id="taskDesc" placeholder="Detalles o notas adicionales...">
+          </div>
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Agregar Tarea</button>
+        </form>
+      </div>
+
+      <div class="invoices-list" id="tasksList"></div>
+    </section>
+
+    <!-- CREATE LISTING VIEW -->
+    <section class="view" id="view-create">
+      <div class="view-header">
+        <h1>Publicar Anuncio</h1>
+        <p>Crea un nuevo listado con asistencia de Inteligencia Artificial.</p>
+      </div>
+
+      <div class="create-form-wrapper">
+        <div class="ai-box">
+          <div class="ai-box-header">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> <strong>Generador Inteligente de Anuncios</strong>
+          </div>
+          <p>Describe tu producto o servicio y la IA completará los campos de forma automática:</p>
+          <div class="ai-input-row">
+            <input type="text" id="aiPromptInput" placeholder="Ej: Vendo MacBook Pro M3 Max en perfecto estado con cargador...">
+            <button class="btn btn-ai" id="generateWithAiBtn"><i class="fa-solid fa-sparkles"></i> Autocompletar con IA</button>
+          </div>
+        </div>
+
+        <form id="createListingForm" class="create-form">
+          <div class="form-group">
+            <label for="formTitle">Título del Anuncio</label>
+            <input type="text" id="formTitle" required placeholder="Ej: MacBook Pro M3 Max 16 pulgadas">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="formType">Tipo de Seccion</label>
+              <select id="formType">
+                <option value="MARKETPLACE">Marketplace</option>
+                <option value="INMOBILIARIA">Inmobiliaria</option>
+                <option value="SERVICIOS">Servicios</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="formCategory">Categoría</label>
+              <input type="text" id="formCategory" required placeholder="Ej: Computadores / Apartamentos">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="formPrice">Precio (COP)</label>
+              <input type="number" id="formPrice" required placeholder="12500000">
+            </div>
+            <div class="form-group">
+              <label for="formLocation">Ubicación</label>
+              <input type="text" id="formLocation" required placeholder="Bogotá, D.C.">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="formDescription">Descripción Detallada</label>
+            <textarea id="formDescription" rows="4" required placeholder="Escribe las especificaciones o condiciones..."></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="formSellerName">Nombre Contacto</label>
+              <input type="text" id="formSellerName" required value="Surgir Tech">
+            </div>
+            <div class="form-group">
+              <label for="formSellerPhone">Teléfono</label>
+              <input type="text" id="formSellerPhone" required value="+57 310 9876543">
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-check"></i> Publicar Oferta</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bottom Navigation for Mobile -->
+  <nav class="bottom-nav">
+    <button class="bottom-nav-item active" data-route="home">
+      <i class="fa-solid fa-house"></i>
+      <span>Inicio</span>
+    </button>
+    <button class="bottom-nav-item" data-route="marketplace">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <span>Market</span>
+    </button>
+    <button class="bottom-nav-item" data-route="realestate">
+      <i class="fa-solid fa-building"></i>
+      <span>Inmuebles</span>
+    </button>
+    <button class="bottom-nav-item" data-route="services">
+      <i class="fa-solid fa-screwdriver-wrench"></i>
+      <span>Servicios</span>
+    </button>
+    <button class="bottom-nav-item" data-route="dashboard">
+      <i class="fa-solid fa-user"></i>
+      <span>Mi Panel</span>
+    </button>
+  </nav>
+
+  <!-- Floating Action Button: AI Assistant -->
+  <button class="fab-ai" id="fabAiBtn" title="Asistente IA SURGIR">
+    <i class="fa-solid fa-robot"></i>
+  </button>
+
+  <!-- AI Assistant Chat Sheet Container -->
+  <div class="ai-sheet-overlay" id="aiSheetOverlay"></div>
+  <div class="ai-sheet" id="aiSheet">
+    <div class="ai-sheet-header">
+      <div class="ai-avatar"><i class="fa-solid fa-sparkles"></i></div>
+      <div class="ai-info">
+        <h3>Asistente IA SURGIR</h3>
+        <span>Gemini Business Engine Online</span>
+      </div>
+      <button class="icon-btn" id="closeAiSheetBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="ai-sheet-messages" id="aiMessagesContainer">
+      <div class="ai-msg bot">
+        Hola, soy tu asistente inteligente SURGIR WEB. ¿En qué te puedo asesorar hoy? Puedo buscar productos, calcular presupuestos o sugerir categorías de inversión.
+      </div>
+    </div>
+    <div class="ai-sheet-input">
+      <input type="text" id="aiChatInput" placeholder="Pregunta algo al asistente IA...">
+      <button class="btn-send" id="sendAiChatBtn"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" id="detailModalOverlay"></div>
+  <div class="modal" id="detailModal">
+    <button class="modal-close" id="closeDetailModalBtn"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-body" id="detailModalBody"></div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal-overlay" id="contactModalOverlay"></div>
+  <div class="modal" id="contactModal">
+    <button class="modal-close" id="closeContactModalBtn"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-header">
+      <h3>Contactar con el Vendedor</h3>
+    </div>
+    <form id="contactForm" class="modal-form">
+      <input type="hidden" id="contactListingId">
+      <div class="form-group">
+        <label>Tu Nombre</label>
+        <input type="text" id="contactName" required placeholder="Carlos Mendoza">
+      </div>
+      <div class="form-group">
+        <label>Tu Correo Electrónico</label>
+        <input type="email" id="contactEmail" required placeholder="carlos@ejemplo.com">
+      </div>
+      <div class="form-group">
+        <label>Tu Teléfono</label>
+        <input type="text" id="contactPhone" required placeholder="+57 300 0000000">
+      </div>
+      <div class="form-group">
+        <label>Mensaje</label>
+        <textarea id="contactMessage" rows="3" required placeholder="Hola, me interesa este listado..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Enviar Mensaje</button>
+    </form>
+  </div>
+
+  <!-- Invoice PDF Modal -->
+  <div class="modal-overlay" id="invoiceModalOverlay"></div>
+  <div class="modal modal-lg" id="invoiceModal">
+    <button class="modal-close" id="closeInvoiceModalBtn"><i class="fa-solid fa-xmark"></i></button>
+    <div class="pdf-container" id="invoicePdfContent"></div>
+  </div>
+
+  <script src="supabase_client.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
